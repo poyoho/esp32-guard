@@ -3,7 +3,7 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "../lib/GPIO.h"
-#include "../lib/blink.h"
+#include "../lib/blink.cpp"
 
 
 Blinker blinker(GPIO_LIGHT);
