@@ -1,18 +1,17 @@
 #include <Arduino.h>
+#include <SPI.h>
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+#include "../lib/GPIO.h"
+#include "../lib/blink.h"
 
-// put function declarations here:
-int myFunction(int, int);
+
+Blinker blinker(GPIO_LIGHT);
 
 void setup() {
-  // put your setup code here, to run once:
-  int result = myFunction(2, 3);
+  blinker.setup();
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-}
-
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
+  blinker.blink(1000);
 }
